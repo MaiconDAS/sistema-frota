@@ -1,19 +1,67 @@
-# README
+# 🚛 Sistema de Gestão de Frota
 
-## About
+Sistema desktop para gerenciamento de frota de veículos, controle de atividades diárias e análise de performance.
 
-This is the official Wails React-TS template.
+![Versão](https://img.shields.io/badge/version-1.0-blue)
+![Windows](https://img.shields.io/badge/platform-Windows-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+## 📋 Sobre o Projeto
 
-## Live Development
+O **Sistema de Gestão de Frota** foi desenvolvido para empresas que precisam controlar as atividades diárias de seus veículos, monitorar a performance da frota e gerar relatórios de produtividade.
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+### Funcionalidades Principais
 
-## Building
+- ✅ **Cadastro de Veículos** - Gerencie todos os veículos da frota com nome, placa e categoria
+- ✅ **Registro de Atividades** - Lance as atividades diárias de cada veículo
+- ✅ **Dashboard Interativo** - Visualize gráficos e estatísticas de performance
+- ✅ **Categorias de Performance** - Configure limites personalizados por tipo de veículo
+- ✅ **Filtros por Data** - Consulte registros por período específico
+- ✅ **Observações Obrigatórias** - Campo de observação obrigatório para dias sem atividades
 
-To build a redistributable, production mode package, use `wails build`.
+### Tecnologias Utilizadas
+
+| Tecnologia | Descrição |
+|------------|-----------|
+| **Go** | Backend e lógica de negócio |
+| **Wails** | Framework para aplicações desktop |
+| **React + TypeScript** | Frontend com tipagem estática |
+| **SQLite** | Banco de dados local (sem necessidade de instalação) |
+| **Recharts** | Gráficos interativos |
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Preview)
+
+### Registros Diários
+![Registros](https://via.placeholder.com/800x400?text=Registros+Preview)
+
+### Gerenciar Veículos
+![Veículos](https://via.placeholder.com/800x400?text=Veiculos+Preview)
+
+## 🚀 Como Executar
+
+### Para usuários finais (clientes)
+
+1. Baixe o arquivo `SistemaFrota_Setup.exe`
+2. Execute o instalador e siga as instruções
+3. Após a instalação, clique no ícone da Área de Trabalho
+4. O programa abrirá e você pode começar a usar!
+
+**⚠️ Requisitos:** Windows 10 ou superior (WebView2 já incluso no sistema)
+
+### Para desenvolvedores
+
+#### Pré-requisitos
+
+- [Go 1.21+](https://go.dev/dl/)
+- [Node.js 18+](https://nodejs.org/)
+- [Wails CLI](https://wails.io/docs/gettingstarted/installation)
+
+#### Clonar e executar
+
+```bash
+git clone https://github.com/MaiconDAS/sistema-frota.git
+cd sistema-frota
+wails dev
