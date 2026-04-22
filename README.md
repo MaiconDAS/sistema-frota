@@ -32,13 +32,13 @@ O **Sistema de Gestão de Frota** foi desenvolvido para empresas que precisam co
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Preview)
+![Dashboard](frontend/src/assets/screenshots/Dashboard.png)
 
 ### Registros Diários
-![Registros](https://via.placeholder.com/800x400?text=Registros+Preview)
+![Registros](frontend/src/assets/screenshots/Registros.png)
 
 ### Gerenciar Veículos
-![Veículos](https://via.placeholder.com/800x400?text=Veiculos+Preview)
+![Veículos](frontend/src/assets/screenshots/veículos.png)
 
 ## 🚀 Como Executar
 
