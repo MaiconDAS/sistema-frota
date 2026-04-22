@@ -1,0 +1,32 @@
+# Binários
+build/
+dist/
+*.exe
+*.exe~
+
+# Dependências
+frontend/node_modules/
+frontend/dist/
+
+# Banco de dados
+*.db
+*.db-journal
+
+# Arquivos do Go
+go.sum
+
+# Arquivos do Wails
+frontend/.vite/
+frontend/.wails/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Instalador
+installer/
+
+# Logs
+*.log
