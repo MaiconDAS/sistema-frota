@@ -28,6 +28,8 @@ export namespace main {
 	    total_atividades: number;
 	    media_diaria: number;
 	    performance: string;
+	    dias_inativos: number;
+	    motivos_inatividade: Record<string, any>;
 	
 	    static createFrom(source: any = {}) {
 	        return new VeiculoDashboard(source);
@@ -42,6 +44,8 @@ export namespace main {
 	        this.total_atividades = source["total_atividades"];
 	        this.media_diaria = source["media_diaria"];
 	        this.performance = source["performance"];
+	        this.dias_inativos = source["dias_inativos"];
+	        this.motivos_inatividade = source["motivos_inatividade"];
 	    }
 	}
 	export class DashboardResponse {
@@ -80,22 +84,28 @@ export namespace main {
 		    return a;
 		}
 	}
-	export class RegistroPayload {
+	export class RegistroParcialPayload {
 	    veiculo_id: number;
-	    data: string;
+	    horas_trabalhadas: number;
 	    quantidade_atividades: number;
-	    motivo_inatividade?: string;
+	    ocorrencia: string;
+	    tempo_parado: number;
+	    observacao: string;
+	    tipo_ocorrencia: string;
 	
 	    static createFrom(source: any = {}) {
-	        return new RegistroPayload(source);
+	        return new RegistroParcialPayload(source);
 	    }
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.veiculo_id = source["veiculo_id"];
-	        this.data = source["data"];
+	        this.horas_trabalhadas = source["horas_trabalhadas"];
 	        this.quantidade_atividades = source["quantidade_atividades"];
-	        this.motivo_inatividade = source["motivo_inatividade"];
+	        this.ocorrencia = source["ocorrencia"];
+	        this.tempo_parado = source["tempo_parado"];
+	        this.observacao = source["observacao"];
+	        this.tipo_ocorrencia = source["tipo_ocorrencia"];
 	    }
 	}
 

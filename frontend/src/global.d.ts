@@ -14,19 +14,14 @@ export interface Categoria {
   alta_performance: number
 }
 
-export interface Registro {
-  id: number
+export interface RegistroParcialPayload {
   veiculo_id: number
-  data: string
+  horas_trabalhadas: number
   quantidade_atividades: number
-  motivo_inatividade: string | null
-}
-
-export interface RegistroPayload {
-  veiculo_id: number
-  data: string
-  quantidade_atividades: number
-  motivo_inatividade: string | null
+  ocorrencia: string
+  tempo_parado: number
+  observacao: string
+  tipo_ocorrencia: string
 }
 
 export interface DashboardData {
@@ -44,6 +39,8 @@ export interface VeiculoDashboard {
   total_atividades: number
   media_diaria: number
   performance: string
+  dias_inativos: number
+  motivos_inatividade: { [key: string]: any }
 }
 
 declare global {
@@ -51,22 +48,18 @@ declare global {
     go: {
       main: {
         App: {
-          // Dashboard
-          DashboardMensal(ano: number, mes: number): Promise<DashboardData>
+          DashboardCompleto(ano: number, mes: number): Promise<DashboardData>
           DashboardDiario(data: string): Promise<DashboardData>
-          
-          // Veiculos
           ListarVeiculos(): Promise<Veiculo[]>
           ListarCategorias(): Promise<Categoria[]>
+          ListarTiposOcorrencia(): Promise<string[]>
+          ListarRegistrosParciaisPorData(data: string): Promise<any[]>
+          ListarRegistrosParciaisPorPeriodo(dataInicio: string, dataFim: string): Promise<any[]>
+          SalvarRegistrosParciais(data: string, registros: RegistroParcialPayload[]): Promise<{msg: string}>
+          LimparTodosRegistros(): Promise<{msg: string}>
           CriarVeiculo(nome: string, placa: string, categoria: string): Promise<{msg: string; id: number}>
           AtualizarVeiculo(id: number, nome: string, placa: string, categoria: string): Promise<{msg: string}>
           ExcluirVeiculo(id: number): Promise<{msg: string}>
-          
-          // Registros
-          ListarRegistros(): Promise<Registro[]>
-          CriarRegistro(data: RegistroPayload): Promise<{msg: string; id: number}>
-          AtualizarRegistro(id: number, data: RegistroPayload): Promise<{msg: string}>
-          ExcluirRegistro(id: number): Promise<{msg: string}>
         }
       }
     }
